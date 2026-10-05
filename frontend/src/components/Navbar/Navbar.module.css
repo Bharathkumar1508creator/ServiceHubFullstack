@@ -1,0 +1,248 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  height: 76px;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.navbarScrolled {
+  height: 76px;
+  background-color: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.navbar :global(.container) {
+  height: 100%;
+}
+
+.navbarContent {
+  align-items: center;
+}
+
+.authActions {
+  flex-shrink: 0;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  color: #222;
+}
+
+.logoIcon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #222;
+  color: white;
+  transition:
+    transform 0.35s ease,
+    border-radius 0.35s ease;
+}
+
+.logo:hover .logoIcon {
+  transform: rotate(-8deg) scale(1.08);
+  border-radius: 14px;
+}
+
+.logoHighlight {
+  color: #0d6efd;
+}
+
+/* Navigation */
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: #444;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navLink:hover {
+  color: #0d6efd;
+  transform: translateY(-2px);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #0d6efd;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navLink:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+
+.active {
+  color: #0d6efd;
+}
+
+/* Login */
+
+.loginButton {
+  padding: 9px 18px;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 500;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  color: #333;
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Register */
+
+.registerButton {
+  padding: 9px 18px;
+  border-radius: 10px;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 500;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.registerButton:hover {
+  background-color: #0d6efd;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.25);
+}
+
+.chatsButton {
+  padding: 9px 15px;
+  border: 1px solid #d4e9e1;
+  border-radius: 10px;
+  color: #197b6e;
+  background: #f3faf7;
+  font-weight: 650;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.chatsButton:hover,
+.chatsButton:global(.active) {
+  transform: translateY(-2px);
+  border-color: #b8ded0;
+  color: #126b61;
+  background: #eaf7f1;
+  box-shadow: 0 6px 16px rgba(27, 120, 102, 0.12);
+}
+
+.userWelcome {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bs-dark);
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .navbar {
+    height: auto;
+    min-height: 72px;
+  }
+
+  .navbarScrolled {
+    height: auto;
+    min-height: 72px;
+  }
+
+  .navbar :global(.container) {
+    min-height: 72px;
+    height: auto;
+  }
+
+  .navbarContent {
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    padding: 0 0 14px;
+  }
+
+  .navbarContent :global(.navbar-nav) {
+    align-items: stretch;
+    padding-top: 8px;
+  }
+
+  .navLink {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .authActions {
+    align-items: stretch;
+    padding-top: 8px;
+  }
+
+  .userWelcome {
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logo {
+    gap: 7px;
+    font-size: 20px;
+  }
+
+  .logoIcon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbarContent :global(.navbar-nav) {
+    margin-right: 0;
+  }
+}

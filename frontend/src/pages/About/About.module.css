@@ -1,0 +1,968 @@
+.aboutPage {
+  overflow: hidden;
+  color: #17252a;
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 620px;
+  align-items: center;
+  overflow: hidden;
+  padding: 5rem 0;
+  background:
+    radial-gradient(circle at 75% 45%, rgba(92, 204, 181, 0.2), transparent 28rem),
+    linear-gradient(135deg, #f4fbf9 0%, #f7f9ff 54%, #fff 100%);
+}
+
+.hero::after {
+  position: absolute;
+  right: -10rem;
+  bottom: -20rem;
+  width: 46rem;
+  height: 46rem;
+  border: 1px solid rgba(21, 139, 130, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3rem rgba(21, 139, 130, 0.025), 0 0 0 7rem rgba(21, 139, 130, 0.02);
+  content: '';
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 660px;
+  animation: heroRise 0.8s both;
+}
+
+.eyebrow,
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #12877d;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+}
+
+.eyebrow {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(18, 135, 125, 0.15);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.heroContent h1 {
+  margin: 1.5rem 0 1.15rem;
+  color: #122329;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+}
+
+.heroContent h1 span,
+.storyCopy h2 span {
+  color: #168c80;
+}
+
+.heroContent > p {
+  max-width: 550px;
+  margin: 0;
+  color: #62747b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.heroActions,
+.closingActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.7rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.copyButton {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.78rem 1.1rem;
+  border-radius: 0.8rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease;
+}
+
+.primaryButton {
+  border: 1px solid #13877d;
+  color: #fff;
+  background: #13877d;
+  box-shadow: 0 9px 22px rgba(19, 135, 125, 0.2);
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  color: #fff;
+  background: #0e7169;
+  box-shadow: 0 13px 25px rgba(19, 135, 125, 0.28);
+  transform: translateY(-3px);
+}
+
+.primaryButton:active,
+.secondaryButton:active,
+.copyButton:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.secondaryButton,
+.copyButton {
+  border: 1px solid #dce7e7;
+  color: #31464d;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.secondaryButton:hover,
+.copyButton:hover {
+  border-color: #9bcfc9;
+  color: #117c75;
+  background: #f2fbf9;
+  transform: translateY(-2px);
+}
+
+.heroNote {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.2rem;
+  color: #75868b;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.noteAvatars {
+  display: inline-flex;
+  padding-left: 0.35rem;
+}
+
+.noteAvatars span {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-left: -0.35rem;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #155d57;
+  background: #c9eee5;
+  font-size: 0.58rem;
+  font-weight: 900;
+}
+
+.noteAvatars span:nth-child(2) {
+  color: #514897;
+  background: #dedafb;
+}
+
+.noteAvatars span:nth-child(3) {
+  color: #9b633d;
+  background: #ffe3ce;
+}
+
+.heroOrb {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  width: min(38vw, 390px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  animation: orbFloat 6s ease-in-out infinite;
+}
+
+.orbitOne,
+.orbitTwo {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(19, 135, 125, 0.18);
+  border-radius: 50%;
+}
+
+.orbitTwo {
+  inset: 2rem;
+  border-style: dashed;
+  animation: orbitSpin 26s linear infinite;
+}
+
+.orbitCore {
+  position: absolute;
+  inset: 28%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(19, 135, 125, 0.12);
+  border-radius: 35%;
+  color: #16877d;
+  background: linear-gradient(145deg, #fff, #dff5ee);
+  box-shadow: 0 30px 70px rgba(28, 109, 100, 0.16);
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  transform: rotate(-8deg);
+}
+
+.orbitDot {
+  position: absolute;
+  top: 12%;
+  right: 22%;
+  width: 1rem;
+  height: 1rem;
+  border: 4px solid #f4fbf9;
+  border-radius: 50%;
+  background: #f2a36d;
+  box-shadow: 0 0 0 7px rgba(242, 163, 109, 0.12);
+}
+
+.storySection,
+.teamSection {
+  padding: 6rem 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: clamp(2rem, 7vw, 6.5rem);
+}
+
+.storyVisual {
+  min-height: 420px;
+  padding: 1.35rem;
+  overflow: hidden;
+  border: 1px solid #e5eeed;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 70% 35%, rgba(111, 218, 195, 0.25), transparent 14rem),
+    linear-gradient(150deg, #f4fbf9, #edf3fb);
+  box-shadow: 0 25px 65px rgba(29, 59, 68, 0.08);
+}
+
+.storyVisualTop {
+  display: flex;
+  justify-content: space-between;
+  color: #829397;
+  font-size: 0.63rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.storyVisualTop i {
+  color: #16877d;
+  font-size: 1.1rem;
+}
+
+.storyIllustration {
+  position: relative;
+  display: grid;
+  min-height: 290px;
+  place-items: center;
+}
+
+.storySun {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffe3ae, #ffd1a5);
+  opacity: 0.8;
+}
+
+.storyHouse {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 13rem;
+  height: 13rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 3rem;
+  color: #248d80;
+  background: linear-gradient(145deg, #fff, #d7f1e9);
+  box-shadow: 0 24px 55px rgba(40, 112, 102, 0.14);
+  font-size: 6rem;
+  animation: houseBob 4s ease-in-out infinite;
+}
+
+.storyToolOne,
+.storyToolTwo,
+.storyToolThree {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+  color: #126d65;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(22, 62, 67, 0.12);
+  animation: badgeBob 4s ease-in-out infinite;
+}
+
+.storyToolOne {
+  top: 4rem;
+  left: 12%;
+  font-size: 1.3rem;
+}
+
+.storyToolTwo {
+  right: 9%;
+  bottom: 3rem;
+  color: #da8b48;
+  animation-delay: 0.7s;
+}
+
+.storyToolThree {
+  bottom: 2.4rem;
+  left: 19%;
+  color: #548dcc;
+  animation-delay: 1.3s;
+}
+
+.storyVisual > p {
+  margin: 0;
+  color: #74858a;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.storyCopy h2,
+.sectionHeading h2,
+.teamHeading h2 {
+  margin: 0.65rem 0 1.1rem;
+  color: #152a30;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
+.storyCopy > p {
+  color: #687b80;
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+.storySignature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.signatureIcon {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border-radius: 0.9rem;
+  color: #16877d;
+  background: #e8f7f3;
+}
+
+.storySignature strong,
+.storySignature small {
+  display: block;
+}
+
+.storySignature strong {
+  color: #29444a;
+  font-size: 0.8rem;
+}
+
+.storySignature small {
+  margin-top: 0.15rem;
+  color: #7b8b8e;
+  font-size: 0.7rem;
+}
+
+.valuesSection {
+  padding: 6rem 0;
+  background: #f6faf9;
+}
+
+.sectionHeading {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.sectionHeading h2 {
+  margin-bottom: 0.65rem;
+}
+
+.sectionHeading > p,
+.teamHeading > p {
+  margin: 0;
+  color: #718287;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.valueCard {
+  position: relative;
+  min-height: 250px;
+  padding: 1.5rem;
+  border: 1px solid #e3edeb;
+  border-radius: 1.1rem;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(27, 64, 69, 0.045);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.valueCard:hover {
+  border-color: #b9e3db;
+  box-shadow: 0 22px 42px rgba(27, 64, 69, 0.1);
+  transform: translateY(-6px);
+}
+
+.valueNumber {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.45rem;
+  color: #aab9b8;
+  font-size: 0.68rem;
+  font-weight: 850;
+}
+
+.valueIcon {
+  display: grid;
+  width: 3.1rem;
+  height: 3.1rem;
+  margin-bottom: 1.45rem;
+  place-items: center;
+  border-radius: 1rem;
+  color: #13877d;
+  background: #eaf8f4;
+  font-size: 1.3rem;
+  transition: transform 0.25s ease;
+}
+
+.valueCard:hover .valueIcon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.valueCard h3 {
+  margin: 0 0 0.5rem;
+  color: #1e3439;
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+
+.valueCard p {
+  max-width: 19rem;
+  margin: 0;
+  color: #728388;
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+.valueArrow {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.25rem;
+  color: #9aadaa;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.valueCard:hover .valueArrow {
+  color: #13877d;
+  transform: translate(2px, -2px);
+}
+
+.teamSection {
+  background: #fff;
+}
+
+.teamHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.teamHeading h2 {
+  margin-bottom: 0;
+}
+
+.teamHeading > p {
+  max-width: 370px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.teamCard {
+  overflow: hidden;
+  border: 1px solid #e6eded;
+  border-radius: 1.1rem;
+  background: #fff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.teamCard:hover {
+  box-shadow: 0 20px 42px rgba(25, 67, 70, 0.1);
+  transform: translateY(-5px);
+}
+
+.teamPortrait {
+  position: relative;
+  display: grid;
+  min-height: 190px;
+  overflow: hidden;
+  place-items: center;
+}
+
+.teamPortrait::before,
+.teamPortrait::after {
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 50%;
+  content: '';
+}
+
+.teamPortrait::after {
+  width: 15rem;
+  height: 15rem;
+}
+
+.teamPortrait > span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 6rem;
+  height: 6rem;
+  place-items: center;
+  border: 4px solid rgba(255, 255, 255, 0.75);
+  border-radius: 2rem;
+  color: #155f59;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 30px rgba(31, 72, 74, 0.1);
+  font-size: 1.5rem;
+  font-weight: 900;
+  transition: transform 0.25s ease;
+}
+
+.teamCard:hover .teamPortrait > span {
+  transform: rotate(-5deg) scale(1.06);
+}
+
+.teamPortrait > i {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.7rem;
+  color: rgba(21, 95, 89, 0.24);
+  font-size: 2.3rem;
+}
+
+.teamMint {
+  background: linear-gradient(135deg, #daf5eb, #bfe7dc);
+}
+
+.teamBlue {
+  background: linear-gradient(135deg, #e3eaff, #cfd7fa);
+}
+
+.teamOrange {
+  background: linear-gradient(135deg, #fff0df, #f9d7bd);
+}
+
+.teamInfo {
+  padding: 1.15rem 1.25rem 1.3rem;
+}
+
+.teamInfo > span {
+  color: #16877d;
+  font-size: 0.57rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.teamInfo h3 {
+  margin: 0.4rem 0 0.2rem;
+  color: #1c3339;
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.teamInfo p {
+  margin: 0;
+  color: #7b898e;
+  font-size: 0.76rem;
+}
+
+.closingSection {
+  padding: 0 0 5.5rem;
+}
+
+.closingCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.4rem, 4vw, 2.5rem);
+  overflow: hidden;
+  border-radius: 1.4rem;
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(153, 241, 219, 0.22), transparent 18rem),
+    linear-gradient(120deg, #153d43, #116e68);
+}
+
+.closingCard::after {
+  position: absolute;
+  top: -9rem;
+  right: 18%;
+  width: 19rem;
+  height: 19rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0.035);
+  content: '';
+  pointer-events: none;
+}
+
+.closingSpark {
+  display: grid;
+  flex: 0 0 auto;
+  width: 3.2rem;
+  height: 3.2rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  color: #b8f5e5;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1.3rem;
+}
+
+.closingCard > div {
+  position: relative;
+  z-index: 1;
+  margin-right: auto;
+}
+
+.closingCard > div > span {
+  color: #a9e7da;
+  font-size: 0.62rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+}
+
+.closingCard h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 850;
+  letter-spacing: -0.045em;
+}
+
+.closingActions {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+}
+
+.closingActions .primaryButton {
+  border-color: #b4f1e0;
+  color: #143e41;
+  background: #b4f1e0;
+  box-shadow: none;
+}
+
+.closingActions .primaryButton:hover {
+  background: #d1f8ed;
+}
+
+.copyButton {
+  min-height: 2.5rem;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.7rem;
+}
+
+.copyButton:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+[data-about-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.75, 0.25, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-about-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -12px;
+  }
+}
+
+@keyframes orbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes houseBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(-2deg);
+  }
+}
+
+@keyframes badgeBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .heroOrb {
+    right: -2%;
+    width: 34vw;
+    opacity: 0.65;
+  }
+
+  .storyGrid {
+    gap: 2.5rem;
+  }
+
+  .closingCard {
+    flex-wrap: wrap;
+  }
+
+  .closingActions {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: 590px;
+    padding: 4rem 0;
+  }
+
+  .heroOrb {
+    top: auto;
+    right: -3rem;
+    bottom: -5rem;
+    width: 18rem;
+    opacity: 0.28;
+    transform: none;
+  }
+
+  .heroContent {
+    max-width: 580px;
+  }
+
+  .storySection,
+  .teamSection,
+  .valuesSection {
+    padding: 4.5rem 0;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .storyVisual {
+    min-height: 360px;
+  }
+
+  .storyIllustration {
+    min-height: 240px;
+  }
+
+  .valueGrid,
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueCard {
+    min-height: 215px;
+  }
+
+  .teamHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .teamHeading > p {
+    max-width: 580px;
+  }
+
+  .teamPortrait {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: 560px;
+    padding: 3.25rem 0;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .heroContent > p {
+    font-size: 0.93rem;
+  }
+
+  .heroActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .heroActions > * {
+    width: 100%;
+  }
+
+  .storyVisual {
+    min-height: 335px;
+    padding: 1rem;
+  }
+
+  .storyHouse {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 2.4rem;
+    font-size: 4.7rem;
+  }
+
+  .storySun {
+    right: 1.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .storyToolOne {
+    left: 5%;
+  }
+
+  .storyToolTwo {
+    right: 4%;
+  }
+
+  .storyToolThree {
+    left: 9%;
+  }
+
+  .closingSection {
+    padding-bottom: 3.5rem;
+  }
+
+  .closingCard {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .closingCard > div {
+    margin-right: 0;
+  }
+
+  .closingActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .closingActions > * {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutPage *,
+  .aboutPage *::before,
+  .aboutPage *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-about-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,1091 @@
+.dashboard {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 6rem;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(13, 202, 240, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(13, 110, 253, 0.12),
+      transparent 30%
+    ),
+    #f4f9ff;
+  color: #172033;
+}
+
+.backgroundGlowOne,
+.backgroundGlowTwo {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.backgroundGlowOne {
+  width: 280px;
+  height: 280px;
+  top: 15%;
+  left: -160px;
+  background: rgba(13, 202, 240, 0.12);
+}
+
+.backgroundGlowTwo {
+  width: 360px;
+  height: 360px;
+  right: -180px;
+  top: 48%;
+  background: rgba(13, 110, 253, 0.1);
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(
+      rgba(13, 110, 253, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(13, 110, 253, 0.04) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+  border: 1px solid
+    rgba(13, 110, 253, 0.1);
+  border-radius: 2rem;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(237, 248, 255, 0.95)
+    );
+  box-shadow:
+    0 25px 70px
+      rgba(13, 110, 253, 0.1);
+}
+
+.heroEyebrow,
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #087ea4;
+}
+
+.liveIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0dcaf0;
+  box-shadow:
+    0 0 0 5px
+      rgba(13, 202, 240, 0.12);
+  animation: pulse 1.8s infinite;
+}
+
+.heroTitle {
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    5rem
+  );
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  max-width: 720px;
+}
+
+.heroTitle span {
+  color: #087ea4;
+}
+
+.heroText {
+  max-width: 620px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #617086;
+}
+
+.heroOrb {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid
+    rgba(13, 110, 253, 0.2);
+  border-radius: 50%;
+}
+
+.orbitOne {
+  width: 180px;
+  height: 180px;
+  animation: rotateOrbit 9s linear infinite;
+}
+
+.orbitTwo {
+  width: 130px;
+  height: 130px;
+  border-color:
+    rgba(13, 202, 240, 0.35);
+  animation:
+    rotateOrbitReverse 7s linear infinite;
+}
+
+.orbCore {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  background:
+    linear-gradient(
+      135deg,
+      #0d6efd,
+      #0dcaf0
+    );
+  box-shadow:
+    0 0 50px
+      rgba(13, 202, 240, 0.4);
+  animation: floatCore 3s ease-in-out infinite;
+}
+
+.statCard {
+  position: relative;
+  height: 100%;
+  min-height: 190px;
+  padding: 1.35rem;
+  overflow: hidden;
+  border: 1px solid
+    rgba(13, 110, 253, 0.08);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 15px 40px
+      rgba(35, 70, 120, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+}
+
+.statCard::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -40px;
+  top: -40px;
+  border-radius: 50%;
+  opacity: 0.12;
+}
+
+.statBlue::after {
+  background: #0d6efd;
+}
+
+.statCyan::after {
+  background: #0dcaf0;
+}
+
+.statPurple::after {
+  background: #6f42c1;
+}
+
+.statOrange::after {
+  background: #fd7e14;
+}
+
+.statIcon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 0.9rem;
+  font-size: 1.15rem;
+}
+
+.statBlue .statIcon {
+  color: #0d6efd;
+  background: #eaf2ff;
+}
+
+.statCyan .statIcon {
+  color: #087ea4;
+  background: #e8fbff;
+}
+
+.statPurple .statIcon {
+  color: #6f42c1;
+  background: #f1ebff;
+}
+
+.statOrange .statIcon {
+  color: #fd7e14;
+  background: #fff3e8;
+}
+
+.statNumber {
+  font-size: 2.3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.statCard p {
+  margin: 0.4rem 0 0.2rem;
+  font-weight: 700;
+}
+
+.statCard span {
+  font-size: 0.75rem;
+  color: #8793a6;
+}
+
+.bookingPanel,
+.actionPanel,
+.activityPanel {
+  height: 100%;
+  padding: 1.7rem;
+  border: 1px solid
+    rgba(13, 110, 253, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 15px 45px
+      rgba(35, 70, 120, 0.07);
+}
+
+.sectionHeader h2,
+.actionPanel h2 {
+  margin: 0.35rem 0 0;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.textAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #0d6efd;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.textAction:hover {
+  gap: 0.7rem;
+}
+
+.bookingFeature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 1.2rem;
+  background:
+    linear-gradient(
+      135deg,
+      #edf7ff,
+      #f7fcff
+    );
+}
+
+.bookingIcon {
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.35rem;
+  background:
+    linear-gradient(
+      135deg,
+      #0d6efd,
+      #0dcaf0
+    );
+}
+
+.bookingContent {
+  flex: 1;
+}
+
+.bookingStatus {
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #087ea4;
+}
+
+.bookingContent h3 {
+  margin: 0.25rem 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.bookingContent p {
+  margin: 0 0 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #748197;
+}
+
+.bookingMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4c5c73;
+}
+
+.bookingMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bookingMeta i {
+  color: #0d6efd;
+}
+
+.trackBookingLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  color: #087ea4;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.trackBookingLink:hover {
+  color: #075e7c;
+}
+
+.bookingArrow {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #0d6efd;
+  background: white;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.bookingFeature:hover
+.bookingArrow {
+  transform: translateX(5px);
+  background: #eaf2ff;
+}
+
+.progressTrack {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+}
+
+.progressLine {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 5px;
+  height: 2px;
+  background: #e6edf5;
+}
+
+.progressStep,
+.progressStepActive {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.65rem;
+  color: #9aa6b8;
+}
+
+.progressStep span,
+.progressStepActive span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #dce4ee;
+}
+
+.progressStepActive {
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+.progressStepActive span {
+  background: #0d6efd;
+  box-shadow:
+    0 0 0 5px
+      rgba(13, 110, 253, 0.1);
+}
+
+.actionPanel {
+  background:
+    linear-gradient(
+      145deg,
+      #101d38,
+      #172c53
+    );
+  color: white;
+}
+
+.actionPanel .sectionLabel {
+  color: #5bdfff;
+}
+
+.actionPanel h2 {
+  color: white;
+}
+
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 125px;
+  padding: 1rem;
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  color: white;
+  text-decoration: none;
+  background:
+    rgba(255, 255, 255, 0.055);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.actionCard:hover {
+  transform: translateY(-5px);
+  color: white;
+  border-color:
+    rgba(91, 223, 255, 0.35);
+  background:
+    rgba(91, 223, 255, 0.1);
+}
+
+.actionCard span {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  border-radius: 0.7rem;
+  color: #5bdfff;
+  background:
+    rgba(91, 223, 255, 0.1);
+}
+
+.actionCard strong {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.actionCard small {
+  margin-top: 0.2rem;
+  color: #9baac2;
+  font-size: 0.65rem;
+}
+
+.activityPanel {
+  min-height: 350px;
+}
+
+.allBookingsPanel {
+  padding: clamp(1rem, 3vw, 1.7rem);
+  border: 1px solid rgba(13, 110, 253, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 15px 45px rgba(35, 70, 120, 0.07);
+}
+
+.allBookingsHint {
+  margin: 0.3rem 0 0;
+  color: #8793a6;
+  font-size: 0.72rem;
+}
+
+.allBookingsCount {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.65rem;
+  border-radius: 2rem;
+  color: #087ea4;
+  background: #e9faff;
+  font-size: 0.8rem;
+  font-weight: 850;
+}
+
+.allBookingsCount small {
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.bookingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.3rem;
+}
+
+.bookingProgressCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #e4edf2;
+  border-radius: 1.05rem;
+  color: inherit;
+  background: linear-gradient(145deg, #fff, #f9fcff);
+  text-decoration: none;
+  box-shadow: 0 7px 22px rgba(34, 70, 106, 0.045);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+  animation: bookingCardIn 0.42s both;
+}
+
+.bookingProgressCard:nth-child(2) {
+  animation-delay: 45ms;
+}
+
+.bookingProgressCard:nth-child(3) {
+  animation-delay: 90ms;
+}
+
+.bookingProgressCard:hover {
+  transform: translateY(-4px);
+  border-color: #b9dfd5;
+  color: inherit;
+  box-shadow: 0 15px 30px rgba(34, 100, 92, 0.1);
+}
+
+.bookingProgressTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.bookingProgressIcon {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.75rem;
+  color: #0b86a2;
+  background: #e8faff;
+  font-size: 0.95rem;
+}
+
+.cardStatus {
+  max-width: 65%;
+  overflow: hidden;
+  padding: 0.33rem 0.48rem;
+  border-radius: 99px;
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardStatusPending {
+  color: #8c7131;
+  background: #fff5dc;
+}
+
+.cardStatusConfirmed {
+  color: #257658;
+  background: #e6f7ed;
+}
+
+.cardStatusCompleted {
+  color: #53419b;
+  background: #f0edff;
+}
+
+.cardStatusCancelled {
+  color: #a34f45;
+  background: #fff0ed;
+}
+
+.bookingProgressName {
+  display: block;
+  overflow: hidden;
+  margin-top: 0.75rem;
+  color: #263f4b;
+  font-size: 0.91rem;
+  font-weight: 850;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookingProgressProvider {
+  display: block;
+  overflow: hidden;
+  margin-top: 0.22rem;
+  color: #7e9294;
+  font-size: 0.62rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookingProgressProvider i {
+  margin-right: 0.28rem;
+  color: #58a192;
+}
+
+.progressSummary {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.2rem;
+  margin-top: 1rem;
+  color: #92a1a6;
+  font-size: 0.48rem;
+  font-weight: 700;
+}
+
+.miniProgressTrack {
+  position: relative;
+  display: flex;
+  height: 0.42rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.28rem 0 0.75rem;
+  border-radius: 99px;
+  background: #e9eff1;
+}
+
+.miniProgressFill {
+  position: absolute;
+  left: 0;
+  height: 0.2rem;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22a98c, #60c893);
+  transition: width 0.5s ease;
+}
+
+.miniProgressCancelled .miniProgressFill {
+  background: #df837a;
+}
+
+.miniProgressTrack > i {
+  position: relative;
+  z-index: 1;
+  width: 0.42rem;
+  height: 0.42rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.miniProgressStep {
+  background: #c8d4d5;
+}
+
+.miniProgressStepActive {
+  background: #31ae8d;
+  box-shadow: 0 0 0 2px rgba(49, 174, 141, 0.12);
+}
+
+.bookingProgressBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid #edf2f2;
+}
+
+.bookingProgressBottom > span:first-child {
+  overflow: hidden;
+  color: #8a999b;
+  font-size: 0.53rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookingProgressBottom > span:first-child i {
+  margin-right: 0.22rem;
+  color: #65a293;
+}
+
+.openTracker {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.22rem;
+  color: #087ea4;
+  font-size: 0.53rem;
+  font-weight: 850;
+}
+
+.allBookingsEmpty {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 2.5rem 1rem 1.5rem;
+  color: #8291a0;
+  text-align: center;
+}
+
+.allBookingsEmpty > i {
+  margin-bottom: 0.35rem;
+  color: #3f9b9e;
+  font-size: 1.8rem;
+}
+
+.allBookingsEmpty strong {
+  color: #3b5260;
+  font-size: 0.9rem;
+}
+
+.allBookingsEmpty span {
+  font-size: 0.68rem;
+}
+
+.allBookingsEmpty a {
+  margin-top: 0.3rem;
+  color: #0d6efd;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@keyframes bookingCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activityCount {
+  padding: 0.45rem 0.7rem;
+  border-radius: 2rem;
+  color: #087ea4;
+  background: #e9faff;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.activityList {
+  margin-top: 1.4rem;
+}
+
+.activityItem {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.activityItem:last-child {
+  border-bottom: 0;
+}
+
+.activityItem strong {
+  font-size: 0.85rem;
+}
+
+.activityItem p {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: #7d899c;
+}
+
+.activityItem time {
+  font-size: 0.68rem;
+  color: #a1acbb;
+  white-space: nowrap;
+}
+
+.activityTrackLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #087ea4;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.activityTrackLink:hover {
+  color: #075e7c;
+}
+
+.activityDotBlue,
+.activityDotCyan,
+.activityDotPurple {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.activityDotBlue {
+  color: #0d6efd;
+  background: #eaf2ff;
+}
+
+.activityDotCyan {
+  color: #087ea4;
+  background: #e8fbff;
+}
+
+.activityDotPurple {
+  color: #6f42c1;
+  background: #f1ebff;
+}
+
+.ctaPanel {
+  position: relative;
+  height: 100%;
+  min-height: 350px;
+  overflow: hidden;
+  padding: 1.8rem;
+  border-radius: 1.5rem;
+  color: white;
+  background:
+    linear-gradient(
+      145deg,
+      #087ea4,
+      #0d6efd
+    );
+  box-shadow:
+    0 25px 55px
+      rgba(13, 110, 253, 0.2);
+}
+
+.ctaDecoration {
+  position: absolute;
+  right: -55px;
+  top: -55px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid
+    rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.ctaDecoration span {
+  position: absolute;
+  inset: 20px;
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.ctaDecoration span:nth-child(2) {
+  inset: 40px;
+}
+
+.ctaDecoration span:nth-child(3) {
+  inset: 60px;
+}
+
+.ctaIcon {
+  position: relative;
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.ctaPanel .sectionLabel {
+  color: #bdf5ff;
+}
+
+.ctaPanel h2 {
+  position: relative;
+  margin: 0.5rem 0 1rem;
+  font-size: 1.8rem;
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.ctaPanel p {
+  position: relative;
+  max-width: 320px;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #d9f8ff;
+}
+
+.ctaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: 0.8rem;
+  color: #087ea4;
+  background: white;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  color: #087ea4;
+  box-shadow:
+    0 10px 25px
+      rgba(0, 0, 0, 0.15);
+}
+
+[data-dashboard-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  transition-delay: var(--animation-delay);
+}
+
+[data-dashboard-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateOrbitReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes floatCore {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .bookingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .allBookingsPanel {
+    padding: 1rem;
+    border-radius: 1.1rem;
+  }
+
+  .bookingGrid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
+  .bookingProgressCard {
+    padding: 0.9rem;
+  }
+
+  .allBookingsCount {
+    padding: 0.38rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .allBookingsCount small {
+    font-size: 0.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bookingProgressCard {
+    animation: none;
+    transition: none;
+  }
+}

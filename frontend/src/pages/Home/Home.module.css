@@ -1,0 +1,742 @@
+.home {
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* HERO */
+
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(13, 110, 253, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #ffffff 55%,
+      #f5f9ff 100%
+    );
+}
+
+.heroContent {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(13, 110, 253, 0.15);
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #0d6efd;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.heroTitle {
+  max-width: 720px;
+  margin-bottom: 22px;
+  color: #151515;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.heroTitle span {
+  color: #0d6efd;
+}
+
+.heroDescription {
+  max-width: 620px;
+  margin-bottom: 32px;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.primaryButton,
+.secondaryButton,
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.primaryButton {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.primaryButton:hover {
+  background-color: #0d6efd;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(13, 110, 253, 0.25);
+}
+
+.secondaryButton {
+  border: 1px solid #dee2e6;
+  background-color: white;
+  color: #333;
+}
+
+.secondaryButton:hover {
+  color: #333;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.heroTrust {
+  margin-top: 38px;
+}
+
+.heroTrust strong,
+.heroTrust span {
+  display: block;
+}
+
+.heroTrust strong {
+  color: #333;
+  font-size: 14px;
+}
+
+.heroTrust span {
+  margin-top: 3px;
+  color: #888;
+  font-size: 12px;
+}
+
+.trustIcon {
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: #eaf3ff;
+  color: #0d6efd;
+  font-size: 20px;
+}
+
+/* HERO VISUAL */
+
+.heroVisual {
+  position: relative;
+  min-height: 480px;
+  opacity: 0;
+  transform: translateY(45px) scale(0.96);
+  transition:
+    opacity 1s ease 0.2s,
+    transform 1s ease 0.2s;
+}
+
+.heroCircle {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #eaf3ff;
+  transform: translate(-50%, -50%);
+  animation: pulseCircle 4s ease-in-out infinite;
+}
+
+.heroMainCard {
+  position: absolute;
+  z-index: 2;
+  width: min(330px, 80%);
+  padding: 32px;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 25px 70px rgba(30, 80, 140, 0.14);
+  backdrop-filter: blur(12px);
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.heroMainCard:hover {
+  transform: translate(-50%, -50%) translateY(-8px);
+  box-shadow: 0 35px 80px rgba(30, 80, 140, 0.2);
+}
+
+.heroMainIcon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 26px;
+}
+
+.heroMainCard h3 {
+  margin-bottom: 8px;
+  color: #222;
+  font-size: 24px;
+}
+
+.heroMainCard p {
+  margin-bottom: 22px;
+  color: #777;
+}
+
+.heroMiniCards {
+  display: flex;
+  gap: 8px;
+}
+
+.heroMiniCards div {
+  flex: 1;
+  padding: 12px 6px;
+  border-radius: 12px;
+  background-color: #f6f8fb;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.heroMiniCards div:hover {
+  background-color: #eaf3ff;
+  transform: translateY(-4px);
+}
+
+.heroMiniCards i {
+  display: block;
+  margin-bottom: 5px;
+  color: #0d6efd;
+}
+
+.heroMiniCards span {
+  color: #555;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.floatingCard {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+  background-color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  animation: floating 4s ease-in-out infinite;
+}
+
+.floatingCard i {
+  font-size: 22px;
+  color: #0d6efd;
+}
+
+.floatingCard strong,
+.floatingCard span {
+  display: block;
+}
+
+.floatingCard strong {
+  color: #333;
+  font-size: 12px;
+}
+
+.floatingCard span {
+  margin-top: 2px;
+  color: #888;
+  font-size: 10px;
+}
+
+.cardOne {
+  top: 12%;
+  left: 0;
+}
+
+.cardTwo {
+  right: 0;
+  bottom: 14%;
+  animation-delay: 1.5s;
+}
+
+/* STATS */
+
+.statsSection {
+  padding: 30px 0 70px;
+  background-color: white;
+}
+
+.statCard {
+  height: 100%;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+  background-color: white;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background-color: #eaf3ff;
+  color: #0d6efd;
+  font-size: 20px;
+}
+
+.statCard h3 {
+  margin: 0;
+  color: #222;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.statCard p {
+  margin: 2px 0 0;
+  color: #888;
+  font-size: 12px;
+}
+
+/* COMMON SECTION */
+
+.servicesSection,
+.stepsSection {
+  padding: 110px 0;
+}
+
+.sectionHeading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.sectionLabel,
+.ctaLabel {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #0d6efd;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.sectionHeading h2 {
+  margin-bottom: 15px;
+  color: #222;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 750;
+}
+
+.sectionHeading h2 span,
+.whyTitle span {
+  color: #0d6efd;
+}
+
+.sectionHeading p {
+  margin: 0;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* SERVICES */
+
+.servicesSection {
+  background-color: #f8faff;
+}
+
+.serviceCard {
+  height: 100%;
+  padding: 28px;
+  border: 1px solid #e9edf4;
+  border-radius: 22px;
+  background-color: white;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.serviceCard:hover {
+  border-color: rgba(13, 110, 253, 0.2);
+  transform: translateY(-9px);
+  box-shadow: 0 20px 45px rgba(25, 75, 130, 0.12);
+}
+
+.serviceIcon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background-color: #eaf3ff;
+  color: #0d6efd;
+  font-size: 24px;
+  transition:
+    transform 0.35s ease,
+    border-radius 0.35s ease;
+}
+
+.serviceCard:hover .serviceIcon {
+  transform: rotate(-6deg) scale(1.08);
+  border-radius: 20px;
+}
+
+.serviceCard h3 {
+  margin-bottom: 12px;
+  color: #222;
+  font-size: 20px;
+}
+
+.serviceCard p {
+  min-height: 72px;
+  margin-bottom: 22px;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #0d6efd;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.serviceLink:hover {
+  gap: 13px;
+}
+
+/* WHY */
+
+.whySection {
+  padding: 120px 0;
+  background-color: white;
+}
+
+.whyTitle {
+  max-width: 550px;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.whyDescription {
+  max-width: 570px;
+  margin-bottom: 35px;
+  color: #777;
+  line-height: 1.8;
+}
+
+.featureItem {
+  height: 100%;
+  padding: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #eeeeee;
+  border-radius: 15px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+}
+
+.featureItem > i {
+  color: #0d6efd;
+  font-size: 22px;
+}
+
+.featureItem h4 {
+  margin-bottom: 4px;
+  color: #333;
+  font-size: 14px;
+}
+
+.featureItem p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.whyVisual {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whyMainCard {
+  width: min(380px, 85%);
+  padding: 32px;
+  border-radius: 25px;
+  background-color: #f8faff;
+  box-shadow: 0 25px 60px rgba(30, 80, 140, 0.1);
+}
+
+.whyTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+.whyTop i {
+  color: #0d6efd;
+}
+
+.progressTrack {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #e1e7ef;
+}
+
+.progressBar {
+  width: 95%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: #0d6efd;
+  animation: progressLoad 1.5s ease;
+}
+
+.qualityValue {
+  margin-top: 20px;
+  color: #222;
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.whyMainCard p {
+  margin: 0;
+  color: #888;
+}
+
+.qualityBadge {
+  position: absolute;
+  right: 4%;
+  bottom: 14%;
+  padding: 13px 18px;
+  border-radius: 14px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.qualityBadge i {
+  margin-right: 7px;
+  color: #0d6efd;
+}
+
+/* STEPS */
+
+.stepsSection {
+  background-color: #f8faff;
+}
+
+.stepCard {
+  position: relative;
+  height: 100%;
+  padding: 32px;
+  border: 1px solid #e9edf4;
+  border-radius: 22px;
+  background-color: white;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(25, 75, 130, 0.1);
+}
+
+.stepNumber {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  color: #e3eaf3;
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.stepIcon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background-color: #eaf3ff;
+  color: #0d6efd;
+  font-size: 24px;
+}
+
+.stepCard h3 {
+  margin-bottom: 12px;
+  color: #222;
+  font-size: 20px;
+}
+
+.stepCard p {
+  margin: 0;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* CTA */
+
+.ctaSection {
+  padding: 90px 0;
+}
+
+.ctaCard {
+  padding: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  border-radius: 28px;
+  background-color: #111827;
+  overflow: hidden;
+}
+
+.ctaCard h2 {
+  max-width: 650px;
+  margin-bottom: 12px;
+  color: white;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+}
+
+.ctaCard p {
+  margin: 0;
+  color: #aeb7c5;
+}
+
+.ctaButton {
+  flex-shrink: 0;
+  background-color: white;
+  color: #111827;
+}
+
+.ctaButton:hover {
+  background-color: white;
+  color: #111827;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.12);
+}
+
+/* REVEAL ANIMATION */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.revealVisible {
+  opacity: 2;
+  transform: translateY(0);
+}
+
+/* KEYFRAMES */
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseCircle {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes progressLoad {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 95%;
+  }
+}
